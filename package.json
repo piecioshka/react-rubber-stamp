@@ -1,0 +1,88 @@
+{
+  "name": "react-rubber-stamp",
+  "description": "🖃 Worn-out rubber stamp component for React. Any text length, no CSS import, no image assets.",
+  "version": "0.1.0",
+  "license": "MIT",
+  "author": {
+    "name": "Piotr Kowalski",
+    "email": "piecioshka@gmail.com",
+    "url": "https://piecioshka.pl/"
+  },
+  "scripts": {
+    "build": "tsup",
+    "prepublishOnly": "npm run build",
+    "type-check-ts": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "coverage": "vitest run --coverage",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "demo": "npm run build && http-server . -c-1 -o /demo/",
+    "screenshots": "npm run build && node scripts/capture-screenshots.mjs",
+    "version": "auto-changelog -p && git add CHANGELOG.md"
+  },
+  "peerDependencies": {
+    "react": ">=17"
+  },
+  "devDependencies": {
+    "@testing-library/react": "^16.2.0",
+    "@types/react": "^19.0.8",
+    "@vitest/coverage-v8": "^3.0.4",
+    "auto-changelog": "^2.5.0",
+    "http-server": "^14.1.1",
+    "jsdom": "^26.0.0",
+    "prettier": "^3.4.2",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "tsup": "^8.3.5",
+    "typescript": "^5.7.3",
+    "vitest": "^3.0.4"
+  },
+  "overrides": {
+    "esbuild": "^0.28.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/piecioshka/react-rubber-stamp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/piecioshka/react-rubber-stamp/issues"
+  },
+  "homepage": "https://github.com/piecioshka/react-rubber-stamp#readme",
+  "engines": {
+    "node": ">=18"
+  },
+  "files": [
+    "demo/",
+    "dist/",
+    "docs/",
+    "src/*.ts",
+    "src/*.tsx",
+    "!src/*.test.tsx",
+    "package.json",
+    "LICENSE",
+    "README.md"
+  ],
+  "keywords": [
+    "react",
+    "react-component",
+    "stamp",
+    "rubber-stamp",
+    "badge",
+    "grunge",
+    "watermark",
+    "beta"
+  ],
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "sideEffects": false
+}

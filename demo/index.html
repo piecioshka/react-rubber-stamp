@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>react-rubber-stamp — demo</title>
+    <link rel="stylesheet" href="./demo.css" />
+
+    <!--
+      The built package keeps `react` external, so a bundler-less demo has to
+      teach the browser where bare specifiers resolve to.
+    -->
+    <script type="importmap">
+      {
+        "imports": {
+          "react": "https://esm.sh/react@19",
+          "react/jsx-runtime": "https://esm.sh/react@19/jsx-runtime",
+          "react-dom/client": "https://esm.sh/react-dom@19/client"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <main class="page">
+      <h1>react-rubber-stamp</h1>
+      <div id="root"></div>
+    </main>
+
+    <script type="module" src="./demo.js"></script>
+  </body>
+</html>

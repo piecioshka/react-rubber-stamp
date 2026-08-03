@@ -1,0 +1,67 @@
+/*
+ * Styling for the screenshot stage only — never shipped to users.
+ *
+ * Every shot is cropped to the `.shot` element, so the page background never
+ * makes it into the PNG. The padding is what gives each image its margin.
+ */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #ffffff;
+  font-family:
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    sans-serif;
+}
+
+.shot {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 44px;
+  padding: 40px 48px;
+  background: #ffffff;
+}
+
+/* A row of labelled examples, used where the point is the difference between
+   settings (distress, speckle) rather than the stamp itself. */
+.shot--labelled {
+  gap: 36px;
+  align-items: flex-start;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+.item__label {
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #8a8a8a;
+}
+
+/* Scale shot: the stamps differ wildly in height, so line them up on their
+   baseline instead of their centres. */
+.shot--scale {
+  align-items: flex-end;
+  gap: 52px;
+}
+
+/* Length shot: the stamps differ hugely in width, so centring them would leave
+   the short ones marooned in white space. Ragged-right reads as a list. */
+.shot--stacked {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 30px;
+}

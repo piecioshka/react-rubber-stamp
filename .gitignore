@@ -1,0 +1,12 @@
+node_modules/
+dist/
+coverage/
+tmp/
+.DS_Store
+*.log
+npm-debug.log
+.nyc_output/
+!.vscode/
+.env
+.env.*
+!.env.example
