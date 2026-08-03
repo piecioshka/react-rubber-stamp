@@ -1,0 +1,74 @@
+name: Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+# The demo is a static read of the built bundle, so a run that starts later
+# always wins; no point queueing two deploys of the same thing.
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: lts/*
+          cache: npm
+
+      - run: npm ci
+
+      - run: npm run build
+
+      # `dist/` is gitignored, so the site is assembled here rather than
+      # served straight from the repo. The demo imports `../dist/index.js`,
+      # which means the two directories have to keep their relative layout.
+      - name: Assemble the site
+        run: |
+          mkdir -p site/demo site/dist
+          cp -r demo/. site/demo/
+          cp -r dist/. site/dist/
+          cp -r docs site/docs
+          # The demo is the whole point of the site, so send the root there.
+          cat > site/index.html <<'HTML'
+          <!doctype html>
+          <html lang="en">
+            <head>
+              <meta charset="utf-8" />
+              <title>react-rubber-stamp</title>
+              <meta http-equiv="refresh" content="0; url=./demo/" />
+              <link rel="canonical" href="./demo/" />
+            </head>
+            <body>
+              <a href="./demo/">react-rubber-stamp demo</a>
+            </body>
+          </html>
+          HTML
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
