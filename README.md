@@ -1,6 +1,6 @@
 # react-rubber-stamp 🖃
 
-[![node version](https://img.shields.io/node/v/react-rubber-stamp.svg)](https://www.npmjs.com/package/react-rubber-stamp) ![typescript](https://img.shields.io/badge/built%20with-TypeScript-3178c6.svg)
+[![node version](https://img.shields.io/node/v/react-rubber-stamp.svg)](https://www.npmjs.com/package/react-rubber-stamp) [![TypeScript](https://img.shields.io/badge/built%20with-TypeScript-3178c6.svg)](https://www.typescriptlang.org/)
 [![npm version](https://badge.fury.io/js/react-rubber-stamp.svg)](https://badge.fury.io/js/react-rubber-stamp)
 [![downloads count](https://img.shields.io/npm/dt/react-rubber-stamp.svg)](https://www.npmjs.com/package/react-rubber-stamp)
 [![size](https://packagephobia.com/badge?p=react-rubber-stamp)](https://packagephobia.com/result?p=react-rubber-stamp)
