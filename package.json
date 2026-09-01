@@ -19,7 +19,7 @@
     "format:check": "prettier --check .",
     "demo": "npm run build && http-server . -c-1 -o /demo/",
     "screenshots": "npm run build && node scripts/capture-screenshots.mjs",
-    "version": "auto-changelog -p && git add CHANGELOG.md"
+    "postversion": "auto-changelog && git add CHANGELOG.md && git commit --amend --no-edit --no-verify && git tag -f v$npm_package_version"
   },
   "peerDependencies": {
     "react": ">=17"
