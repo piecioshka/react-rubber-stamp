@@ -6,7 +6,7 @@
 [![downloads count](https://img.shields.io/npm/dt/react-rubber-stamp.svg)](https://www.npmjs.com/package/react-rubber-stamp)
 [![size](https://packagephobia.com/badge?p=react-rubber-stamp)](https://packagephobia.com/result?p=react-rubber-stamp)
 [![license](https://img.shields.io/npm/l/react-rubber-stamp.svg)](https://piecioshka.mit-license.org)
-[![github-ci](https://github.com/piecioshka/react-rubber-stamp/actions/workflows/testing.yml/badge.svg)](https://github.com/piecioshka/react-rubber-stamp/actions/workflows/testing.yml)
+[![github-ci](https://github.com/piecioshka/react-rubber-stamp/actions/workflows/ci.yml/badge.svg)](https://github.com/piecioshka/react-rubber-stamp/actions/workflows/ci.yml)
 
 > Worn-out rubber stamp component for React — any text length, no CSS import, no image assets.
 
