@@ -28,7 +28,7 @@
     "@testing-library/react": "^16.2.0",
     "@types/react": "^19.0.8",
     "@vitest/coverage-v8": "^3.0.4",
-    "auto-changelog": "^2.5.0",
+    "auto-changelog": "^2.6.0",
     "http-server": "^14.1.1",
     "jsdom": "^26.0.0",
     "prettier": "^3.4.2",
@@ -61,7 +61,8 @@
     "!src/*.test.tsx",
     "package.json",
     "LICENSE",
-    "README.md"
+    "README.md",
+    "CHANGELOG.md"
   ],
   "keywords": [
     "react",
@@ -84,5 +85,10 @@
       "require": "./dist/index.cjs"
     }
   },
-  "sideEffects": false
+  "sideEffects": false,
+  "auto-changelog": {
+    "commitLimit": false,
+    "backfillLimit": false,
+    "hideCredit": true
+  }
 }
