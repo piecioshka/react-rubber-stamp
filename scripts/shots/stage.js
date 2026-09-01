@@ -98,7 +98,9 @@ const SHOTS = {
 };
 
 const name = new URLSearchParams(location.search).get("shot");
-const shot = SHOTS[name];
+// Own-property check so names like "constructor" cannot reach inherited
+// members of SHOTS - only shots defined above resolve.
+const shot = Object.hasOwn(SHOTS, name) ? SHOTS[name] : undefined;
 
 if (!shot) {
   throw new Error(
